@@ -12,10 +12,15 @@ import java.util.Map;
 
 @RestController
 @AllArgsConstructor
-@CrossOrigin(origins = "*", maxAge = 3589)
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class BaseController {
     @Autowired
     esfService esf_Service;
+
+    @GetMapping("/t4est")
+    public String test() {
+        return "FDSF";
+    }
     @GetMapping("/esf")
     public List<Map<String, Object>> getTest(@RequestParam String filter, @RequestParam String search, @RequestParam String startDate, @RequestParam String endDate, @RequestParam String[] groupField) {
         return esf_Service.executeQueryWithOptions(filter, search, startDate, endDate, groupField);

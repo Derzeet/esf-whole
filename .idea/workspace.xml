@@ -5,8 +5,283 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fe6ec19c-a62e-41ba-b99b-a51d550ee596" name="Changes" comment="fornt back">
-      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/esf-whole.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/LoginController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/payload/request/LoginRequest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/payload/response/JwtResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/payload/response/MessageResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryDossier/CredentialsRepo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/security/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/security/jwt/JwtAuthenticationEntryPoint.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/security/jwt/JwtRequestFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/security/jwt/JwtTokenUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/security/services/UserDetailsServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/service/credentialsService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/.eslintcache" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/.eslintcache" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/0.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/0.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/1.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/1.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack.old" beforeDir="false" afterPath="$PROJECT_DIR$/client/node_modules/.cache/default-development/index.pack.old" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/client/src/pages/OracleTable/OracleTable.jsx" beforeDir="false" afterPath="$PROJECT_DIR$/client/src/pages/OracleTable/OracleTable.jsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/demo.iml" beforeDir="false" afterPath="$PROJECT_DIR$/demo.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/configuration/AuthDataSourceConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/configuration/DosierDataSourceConfiguration.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/configuration/DosierDataSourceConfiguration.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/configuration/PhotoDataSourceConfiguration.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/BaseController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/controller/BaseController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/extractor/mv_fl_extractor.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsAuth/ERole.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsAuth/Role.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsAuth/User.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsAuth/events.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsAuth/log.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsAuth/news.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsAuth/user_roles.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/Credentials.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/Credentials.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/FL_PENSION_FINAL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/NodesFL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/NodesUL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/TaxOutEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/esf_all2.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/mv_auto_fl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/searchResultModelFL.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/modelsDossier/searchResultModelUl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/AccountantListEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/AdvocateListEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/AuditorsListEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/BailiffListEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/CommodityProducer.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/FirstCreditBureauEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/FpgTempEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/IpgoEmailEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/MilitaryAccounting2Entity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/MillitaryAccount.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/MvUlFounderUl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/MvUlLeaderEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/MzEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/NdsEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/OpgEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/QoldauSubsidy.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/RegAddressUlEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/SvedenyaObUchastnikovUlEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/TIpEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/WantedListEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/adm.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/bankrot.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/block_esf.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/convicts_justified.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/convicts_terminated_by_rehab.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/criminals.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/dormant.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/equipment.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/flPensionMini.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/fl_contacts.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/fl_pension_contr.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/fl_relatives.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/immoral_lifestyle.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/lawyers.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/msh.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/mv_fl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/mv_iin_doc.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/mv_rn_old.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/mv_ul.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/mv_ul_founder_fl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/mv_ul_leader.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/omn.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/orphans.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/pdl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/photoDb.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/reg_address_fl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/school.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/modelsPhot/universities.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/AccountantListEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/AdvocateListEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/AuditorsListEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/BailiffListEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/CommodityProducerRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/FirstCreditBureauEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/FpgTempEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/IpgoEmailEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/MilitaryAccounting2Repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/MvUlFounderUlRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/MvUlLeaderEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/MzEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/NdsEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/OpgRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/QoldauRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/RegAddressUlEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/TIpEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/WantedListRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/adm_repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/bankrotRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/block_esfRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/convicts_justifiedRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/convicts_terminated_by_rehabRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/criminalsRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/dormant_repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/equipment_repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/flContactsRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/fl_pension_MiniRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/fl_pension_contrRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/fl_relativesRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/militaryAccountRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/mshRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/mv_fl_repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/mv_iin_docRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/mv_rn_oldRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/mv_ul_founder_flRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/mv_ul_leaderRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/mv_ul_repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/newPhotoRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/omn_repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/orphans_repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/pdlReposotory.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/reg_address_fl_Repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/schoolRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/photo/repositoryPhot/universitiesRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryAuth/EventsRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryAuth/NewsRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryAuth/RoleRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryAuth/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryAuth/logRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryAuth/user_RolesRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryDossier/TaxOutEntityRepo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryDossier/esf_all2Repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/repositoryDossier/mv_auto_fl_repo.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/service/newPhotoService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/tools/PdfGenerator.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/backend/tools/fontstimes.ttf" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/configuration/AuthDataSourceConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/configuration/DosierDataSourceConfiguration.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend/configuration/DosierDataSourceConfiguration.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/configuration/PhotoDataSourceConfiguration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/controller/BaseController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/example/backend/controller/BaseController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/extractor/mv_fl_extractor.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsAuth/ERole.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsAuth/Role.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsAuth/User.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsAuth/events.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsAuth/log.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsAuth/news.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsAuth/user_roles.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsDossier/FL_PENSION_FINAL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsDossier/NodesFL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsDossier/NodesUL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsDossier/TaxOutEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsDossier/esf_all2.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsDossier/mv_auto_fl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsDossier/searchResultModelFL.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/modelsDossier/searchResultModelUl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/AccountantListEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/AdvocateListEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/AuditorsListEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/BailiffListEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/CommodityProducer.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/FirstCreditBureauEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/FpgTempEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/IpgoEmailEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/MilitaryAccounting2Entity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/MillitaryAccount.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/MvUlFounderUl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/MvUlLeaderEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/MzEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/NdsEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/OpgEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/QoldauSubsidy.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/RegAddressUlEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/SvedenyaObUchastnikovUlEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/TIpEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/WantedListEntity.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/adm.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/bankrot.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/block_esf.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/convicts_justified.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/convicts_terminated_by_rehab.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/criminals.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/dormant.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/equipment.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/flPensionMini.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/fl_contacts.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/fl_pension_contr.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/fl_relatives.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/immoral_lifestyle.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/lawyers.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/msh.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/mv_fl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/mv_iin_doc.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/mv_rn_old.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/mv_ul.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/mv_ul_founder_fl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/mv_ul_leader.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/omn.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/orphans.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/pdl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/photoDb.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/reg_address_fl.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/school.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/modelsPhot/universities.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/AccountantListEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/AdvocateListEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/AuditorsListEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/BailiffListEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/CommodityProducerRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/FirstCreditBureauEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/FpgTempEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/IpgoEmailEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/MilitaryAccounting2Repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/MvUlFounderUlRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/MvUlLeaderEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/MzEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/NdsEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/OpgRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/QoldauRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/RegAddressUlEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/TIpEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/WantedListRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/adm_repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/bankrotRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/block_esfRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/convicts_justifiedRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/convicts_terminated_by_rehabRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/criminalsRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/dormant_repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/equipment_repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/flContactsRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/fl_pension_MiniRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/fl_pension_contrRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/fl_relativesRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/militaryAccountRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/mshRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/mv_fl_repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/mv_iin_docRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/mv_rn_oldRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/mv_ul_founder_flRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/mv_ul_leaderRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/mv_ul_repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/newPhotoRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/omn_repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/orphans_repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/pdlReposotory.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/reg_address_fl_Repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/schoolRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/photo/repositoryPhot/universitiesRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryAuth/EventsRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryAuth/NewsRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryAuth/RoleRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryAuth/UserRepository.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryAuth/logRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryAuth/user_RolesRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryDossier/TaxOutEntityRepo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryDossier/esf_all2Repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/repositoryDossier/mv_auto_fl_repo.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/service/newPhotoService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/example/backend/tools/PdfGenerator.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/test-classes/com/example/backend/BackEndApplicationTests.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,17 +291,23 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
   </component>
   <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
   <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="useMavenConfig" value="true" />
+      </MavenGeneralSettings>
+    </option>
     <option name="importingSettings">
       <MavenImportingSettings>
         <option name="workspaceImportEnabled" value="true" />
@@ -46,8 +327,9 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/Users/user/Desktop/OracleWHOLE/oracle-db-tool/demo",
+    "last_opened_file_path": "C:/Users/Zhahangerma/Desktop/esf/esf-whole/src/main/java/com/example/backend",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -59,11 +341,24 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Zhahangerma\Desktop\esf\esf-whole\src\main\java\com\example\backend" />
+      <recent name="C:\Users\Zhahangerma\Desktop\esf\esf-whole" />
       <recent name="C:\Users\user\Desktop\OracleWHOLE\oracle-db-tool\demo" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\user\Desktop\OracleWHOLE\oracle-db-tool\demo" />
     </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.example.backend.security.jwt" />
+      <recent name="com.example.backend.security.services" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
   </component>
   <component name="RunManager" selected="Spring Boot.BackEndApplication">
     <configuration name="BackEndApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
@@ -80,6 +375,10 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Spring Boot.BackEndApplication" />
+      <item itemvalue="Spring Boot.DemoApplication" />
+    </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -91,6 +390,9 @@
       <updated>1685598621870</updated>
       <workItem from="1685598623012" duration="12386000" />
       <workItem from="1685695762012" duration="3934000" />
+      <workItem from="1685706339537" duration="14958000" />
+      <workItem from="1686042537973" duration="503000" />
+      <workItem from="1686043361289" duration="21449000" />
     </task>
     <task id="LOCAL-00001" summary="fornt back">
       <created>1685700572611</created>
@@ -104,6 +406,29 @@
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="origin/main" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="fornt back" />

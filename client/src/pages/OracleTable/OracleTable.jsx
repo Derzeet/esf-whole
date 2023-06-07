@@ -40,7 +40,7 @@ import OutlinedInput from '@mui/material/OutlinedInput';
 import Chip from '@mui/material/Chip';
 
 
-const baseURL = "http://172.17.1.147:9265/"
+const baseURL = "http://192.168.30.24:9265/"
 const fields = {
   "DESCRIPTION": "Описание товара",
   "UNIT_CODE": "Код товара",
