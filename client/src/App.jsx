@@ -1,16 +1,43 @@
-import React from "react";
+import React, {useNavigate } from "react";
 import './App.scss'
 import {
   BrowserRouter as Router,
   Routes,
   Route,
 } from "react-router-dom";
-
+import Cookies from 'js-cookie'
 import { createTheme, ThemeProvider } from '@mui/material';
 
 import OracleTable from "./pages/OracleTable/OracleTable";
+import Login from "./pages/LoginPage/Login"
 
+function checkCookiesExist() {
+  const token = Cookies.get('token');
+  if (token != null) {
+    return false
+  } else {
+    return true
+  }
+}
 
+// Custom component for the "/" route
+function HomePage() {
+  const navigate = useNavigate();
+
+  // Check if cookies exist
+  if (!checkCookiesExist()) {
+    // Cookies do not exist, redirect to the login page
+    navigate('/login');
+    return null;
+  }
+
+  // Cookies exist, render the component for the "/" route
+  return (
+      <>
+        <OracleTable />
+      </>
+  );
+}
 function App() {
 
 
@@ -43,7 +70,7 @@ function App() {
           input: {
             '&:-webkit-autofill': {
               WebkitBoxShadow: '0 0 0 100px #0D0F11 inset'
-            
+
             }
           }
         }
@@ -58,6 +85,13 @@ function App() {
             <Route path='/' element={
               <>
               <OracleTable/>
+              </>
+            }/>
+          </Routes>
+          <Routes>
+            <Route path='/login' element={
+              <>
+              <Login/>
               </>
             }/>
           </Routes>
