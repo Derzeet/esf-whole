@@ -5,9 +5,16 @@ import org.springframework.jdbc.core.JdbcTemplate;
 import org.springframework.stereotype.Service;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import java.io.IOException;
+import java.io.OutputStream;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import org.apache.poi.ss.usermodel.*;
+import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+
+import javax.servlet.http.HttpServletResponse;
 
 
 @Service
@@ -18,16 +25,52 @@ public class esfService {
     public esfService(JdbcTemplate jdbcTemplate) {
         this.jdbcTemplate = jdbcTemplate;
     }
+    public void exportToExcel(List<Map<String, Object>> data, HttpServletResponse response) throws IOException {
+        // Create a new workbook
+        Workbook workbook = new XSSFWorkbook();
+
+        // Create a new sheet
+        Sheet sheet = workbook.createSheet("Data");
+
+        // Create header row
+        Row headerRow = sheet.createRow(0);
+        int columnCount = data.get(0).size();
+        int columnIndex = 0;
+        for (String fieldName : data.get(0).keySet()) {
+            Cell cell = headerRow.createCell(columnIndex++);
+            cell.setCellValue(fieldName);
+        }
+
+        // Create data rows
+        int rowIndex = 1;
+        for (Map<String, Object> row : data) {
+            Row dataRow = sheet.createRow(rowIndex++);
+            columnIndex = 0;
+            for (Object value : row.values()) {
+                Cell cell = dataRow.createCell(columnIndex++);
+                if (value instanceof String) {
+                    cell.setCellValue((String) value);
+                } else if (value instanceof Number) {
+                    cell.setCellValue(((Number) value).doubleValue());
+                } else if (value instanceof Date) {
+                    cell.setCellValue((Date) value);
+                }
+            }
+        }
+
+        // Set content type and headers for the response
+        response.setContentType("application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
+        response.setHeader("Content-Disposition", "attachment; filename=data.xlsx");
+
+        // Write the workbook data to the response
+        OutputStream outputStream = response.getOutputStream();
+        workbook.write(outputStream);
+        workbook.close();
+        outputStream.close();
+    }
 
     public List<Map<String, Object>> executeQueryWithOptions(String filter, String search, String startDate, String endDate, String[] groupField) {
         String query = "SELECT ";
-        String queryEnd = " sum(TURNOVER_SIZE) as Total, sum(QUANTITY) as QUANTITY " +
-                "FROM esf.esf_new " +
-                "WHERE IIN_CUSTOMER IN ('130440030933', '130440030933', '130940009448', '140640015225') " +
-                "AND toDate(TURNOVER_DATE) >= toDate('2020-01-01') " +
-                "AND toDate(TURNOVER_DATE) <= toDate('2023-01-01') " +
-                "GROUP BY NAMES_SELLER, NAME_CUSTOMER " +
-                "LIMIT 10000";
         for (String field : groupField) {
             query = query + field + ", ";
         }

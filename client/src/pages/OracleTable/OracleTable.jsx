@@ -1,7 +1,7 @@
 import * as React from "react";
 import axios from 'axios';
 
-
+import ExitToAppIcon from '@mui/icons-material/ExitToApp'
 
 import exportFromJSON from "export-from-json";
 import FileDownloadIcon from '@mui/icons-material/FileDownload';
@@ -38,6 +38,15 @@ import dayjs from "dayjs";
 import moment from "moment/moment";
 import OutlinedInput from '@mui/material/OutlinedInput';
 import Chip from '@mui/material/Chip';
+import {saveAs} from "file-saver"
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom'
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+
 
 
 const baseURL = "http://192.168.30.24:9265/"
@@ -74,7 +83,9 @@ function getStyles(name, personName, theme) {
 
 function OracleTable(props) {
     const theme = useTheme();
+    const navigate = useNavigate()
     const [groupField, setGroupFields] = React.useState([])
+    const login = React.useState(Cookies.get('login') ? Cookies.get('login') : "")
     const handleChange = (event) => {
         const {
           target: { value },
@@ -84,6 +95,7 @@ function OracleTable(props) {
           typeof value === 'string' ? value.split(',') : value,
         );
       };
+
     const [loading, setLoading] = React.useState(false)
     const labelStyle = {
         fontSize: '14px', /* set the desired font size */
@@ -109,54 +121,144 @@ function OracleTable(props) {
 
     const [filter, setFilter] = React.useState('')
     const [search, setSearch] = React.useState('')
-    const [startDate, setStartDate] = React.useState('')
-    const [endDate, setEndDate] = React.useState('')
+    const [startDate, setStartDate] = React.useState(dayjs('2019-01-01'))
+    const [endDate, setEndDate] = React.useState(dayjs('2023-01-01'))
     const [mainList, setMainList] = React.useState([])
     
     const [displayColumns, setDisplayColumns] = React.useState([])
+    const [openDialog, setOpenDialog] = React.useState(false);
 
-  
-    
+    const [testReason, setTestReason] = React.useState('')
+    const [dopInfo, setDopInfo] = React.useState('')
+    const handleClickOpen = () => {
+        setTestReason('')
+        setDopInfo('')
+        setOpenDialog(true);
+    };
+
+    const handleClose = () => {
+        setOpenDialog(false);
+    };
+    const handleSave = async () => {
+
+        handleClose();
+    };
+
     const getData = async () => {
-        // console.log("filter", filter)
-        // console.log("search", search)
-        // console.log("startDate", startDate ? startDate.format('YYYY-MM-DD') : null)
-        // console.log("endDate", endDate ? endDate.format('YYYY-MM-DD') : null)
-        // console.log("group", groupField)
         const params = {
-          filter,
-          search,
-          startDate: startDate ? startDate.format('YYYY-MM-DD') : null,
-          endDate: endDate ? endDate.format('YYYY-MM-DD') : null,
-          groupField: groupField.join(',')
+            filter,
+            search,
+            startDate: startDate ? startDate.format('YYYY-MM-DD') : null,
+            endDate: endDate ? endDate.format('YYYY-MM-DD') : null,
+            groupField: groupField.join(','),
+            testReason,
+            dopInfo
         }
         setLoading(true)
+        handleClose();
         setDisplayColumns(groupField)
+        const token = Cookies.get('token');
+        axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+        console.log(params)
         axios.get(baseURL + 'esf', {params: params}).then((res) => {
-          console.log(res.data)
-          setMainList(res.data)
-          setLoading(false)
+            console.log(res.data)
+            setMainList(res.data)
+            setLoading(false)
         })
     }
 
+
+
+    // const getData = async () => {
+    //     const params = {
+    //       filter,
+    //       search,
+    //       startDate: startDate ? startDate.format('YYYY-MM-DD') : null,
+    //       endDate: endDate ? endDate.format('YYYY-MM-DD') : null,
+    //       groupField: groupField.join(',')
+    //     }
+    //     setLoading(true)
+    //     setDisplayColumns(groupField)
+    //     const token = Cookies.get('token');
+    //     axios.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+    //     axios.get(baseURL + 'esf', {params: params}).then((res) => {
+    //       console.log(res.data)
+    //       setMainList(res.data)
+    //       setLoading(false)
+    //     })
+    // }
+
+
     const download = () => {
-        axios.get('http://localhost:1415/export-to-pdf', {responseType: 'blob'}).then(res=> {
-            const url = window.URL.createObjectURL(new Blob([res.data]))
-            const link = document.createElement('a')
-            link.href = url
-            link.setAttribute('download', 'document.pdf')
-            document.body.appendChild(link)
-            link.click()
-        })
-        // const data = mainList
-        // const fileName = "set"
-        // const exportType = exportFromJSON.types.csv
-        // const encoding = 'windows-1252'
-        // exportFromJSON({data, fileName, beforeTableEncode, exportType, encoding})
+        const params = {
+            filter,
+            search,
+            startDate: startDate ? startDate.format('YYYY-MM-DD') : null,
+            endDate: endDate ? endDate.format('YYYY-MM-DD') : null,
+            groupField: groupField.join(',')
+        }
+        axios
+            .get(baseURL + 'download', {params: params, responseType: 'blob'})
+            .then(response => {
+                const file = new Blob([response.data]);
+                saveAs(file, 'data.xlsx');
+            })
+            .catch(error => {
+                console.error('Error downloading file:', error);
+            });
+    }
+    const deleteCookie = () => {
+        Cookies.remove('token')
+        Cookies.remove('login')
+        navigate('/login')
     }
     return (
         <div className="wholeBlock">
-            <div className="searchBar">
+            <Dialog open={openDialog} onClose={handleClose} PaperProps={{ style: { width: 800, top: -10}}}>
+                <div style={{padding: '10px', backgroundColor: '#0D0F11', borderRadius: '2px', border: '0.1px solid rgba(134, 134, 134, 0.31)'}}>
+                    <DialogTitle><a style={{fontWeight: 700, fontSize: '25px'}}>Основания проверки</a></DialogTitle>
+                    <DialogContent>
+                        <div style={{ marginTop: '40px'}}>
+                            <FormControl fullWidth style={{width: '100%'}}>
+                                <InputLabel id="demo-simple-select-label">Основания проверки</InputLabel>
+                                <Select
+                                    // size="small"
+                                    labelId="demo-simple-select-label"
+                                    id="demo-simple-select"
+                                    value={testReason}
+                                    label="Основания проверки"
+
+                                    onChange={(e) => {setTestReason(e.target.value)}}
+                                >
+                                    <MenuItem value={'Тематика аналитической работы'}>Тематика аналитической работы</MenuItem>
+                                    <MenuItem value={'Уголоное дела/ЕРДР'}>Уголоное дела/ЕРДР</MenuItem>
+                                    <MenuItem value={'Следственные поручения'}>Следственные поручения</MenuItem>
+                                    <MenuItem value={'Поручения прокурора'}>Поручения прокурора</MenuItem>
+                                    <MenuItem value={'Международные поручения'}>Международные поручения</MenuItem>
+                                    <MenuItem value={'Поручения АФМ РК'}>Поручения АФМ РК</MenuItem>
+                                    <MenuItem value={'Поручения вышестоящего руководства'}>Поручения вышестоящего руководства</MenuItem>
+                                    <MenuItem value={'Материалы оперативных проверок'}>Материалы оперативных проверок</MenuItem>
+                                </Select>
+
+                                <TextField
+                                    value={dopInfo}
+                                    onChange={(e) => {
+                                        setDopInfo(e.target.value)
+                                    }}
+                                    style={{marginTop: '30px'}}
+                                    id="outlined-basic"
+                                    label="Номер ЕРДР/Дата/ФИО руководств/Сфера/Тематика"
+                                    variant="outlined" />
+                            </FormControl>
+                        </div>
+                    </DialogContent>
+                    <DialogActions>
+                        <Button onClick={handleClose}>Отмена</Button>
+                        <Button onClick={() => {getData()}}>Запрос</Button>
+                    </DialogActions>
+                </div>
+            </Dialog>
+            <div className="searchBar" style={{position: 'relative'}}>
                 <FormControl sx={{ m: 1, width: '90%' }} style={{ margin: '0 auto', marginBottom: '15px'}}>
                             <InputLabel id="demo-simple-select-label">Фильтр</InputLabel>
                             <Select
@@ -242,7 +344,7 @@ function OracleTable(props) {
                             }}
                             variant="contained"
                             onClick={() => {
-                                getData()
+                                handleClickOpen()
                             }}
                             >
                             {!loading && (
@@ -253,6 +355,12 @@ function OracleTable(props) {
                                 )}
                         </Button>
                     </div>
+                <div style={{position: 'absolute', bottom: '10px', right: '10px'}}>
+                    <a style={{color: "grey", marginRight: "20px", fontSize: '14px'} }>{login}</a>
+                    <Button variant="outlined" onClick={() => deleteCookie()} endIcon={<ExitToAppIcon/>}>
+                        Выйти
+                    </Button>
+                </div>
             </div>
             <div className="tableBlock" style={{}}>
                 <div className="tableSam" style={{ height: '90% !important'}}> 
@@ -283,9 +391,12 @@ function OracleTable(props) {
                         </TableFooter>
                         </div> */}
                     <div style={{ marginTop: '100px', display: 'flex', justifyContent: 'flex-end', width: '95%'}}>
-                        <IconButton onClick={download} aria-label="download" size="large">
-                            <FileDownloadIcon fontSize="inherit" />
-                        </IconButton>
+                        {/*<IconButton onClick={download} aria-label="download" size="large">*/}
+                        {/*    <FileDownloadIcon fontSize="inherit" />*/}
+                        {/*</IconButton>*/}
+                        <Button variant="outlined" onClick={download} aria-label="download" size="large"endIcon={<FileDownloadIcon/>}>
+                            Скачать результат
+                        </Button>
                     </div>
                     </>
                 )}

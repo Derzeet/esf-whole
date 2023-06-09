@@ -1,4 +1,5 @@
-import React, {useNavigate } from "react";
+import React from "react";
+import { useNavigate } from 'react-router-dom'
 import './App.scss'
 import {
   BrowserRouter as Router,
@@ -10,10 +11,10 @@ import { createTheme, ThemeProvider } from '@mui/material';
 
 import OracleTable from "./pages/OracleTable/OracleTable";
 import Login from "./pages/LoginPage/Login"
-
+import Logs from "./pages/LogsPage/LogsPage"
 function checkCookiesExist() {
   const token = Cookies.get('token');
-  if (token != null) {
+  if (!token) {
     return false
   } else {
     return true
@@ -69,7 +70,7 @@ function App() {
           },
           input: {
             '&:-webkit-autofill': {
-              WebkitBoxShadow: '0 0 0 100px #0D0F11 inset'
+              WebkitBoxShadow: '0 0   0 100px #0D0F11 inset'
 
             }
           }
@@ -84,7 +85,12 @@ function App() {
           <Routes>
             <Route path='/' element={
               <>
-              <OracleTable/>
+              <HomePage/>
+              </>
+            }/>
+            <Route path='/logs' element={
+              <>
+                <Logs/>
               </>
             }/>
           </Routes>
